@@ -1,5 +1,5 @@
-/*                               -*- Mode: C -*- 
- * sysdep.c -- 
+/*                               -*- Mode: C -*-
+ * sysdep.c --
  * ITIID           : $ITI$ $Header $__Header$
  * Author          : Thomas Biskup
  * Created On      : Sun Dec 29 22:29:49 1996
@@ -18,6 +18,8 @@
  * place.  These sources must not be distributed for any fees in excess of
  * $3 (as of January, 1997).
  */
+
+#include "config.h"
 
 #if defined(__TS_LINUX__)
 # include <ncurses.h>
@@ -101,7 +103,7 @@ void init_io(void)
 #else
 # error Please define 'init_io' for your target system.
 #endif
-  
+
   initialize_colors();
 }
 
@@ -205,7 +207,7 @@ void prtstr(char *fmt, ...)
   va_start(vl, fmt);
   vsprintf(buffer, fmt, vl);
   va_end(vl);
-  
+
 #if defined(__TS_LINUX__)
   addstr(buffer);
 #elif defined(__TS_DOS__)
@@ -229,7 +231,7 @@ void stdprtstr(char *fmt, ...)
   va_start(vl, fmt);
   vsprintf(buffer, fmt, vl);
   va_end(vl);
-  
+
   printf("%s", buffer);
   fflush(stdout);
 }
@@ -290,7 +292,7 @@ void initialize_colors(void)
 {
 #if defined(__TS_LINUX__)
   byte i;
-  
+
   start_color();
 
   for (i = 0; i < MAX_COLOR; i++)

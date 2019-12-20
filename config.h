@@ -1,5 +1,5 @@
-/*                               -*- Mode: C -*- 
- * config.h -- 
+/*                               -*- Mode: C -*-
+ * config.h --
  * ITIID           : $ITI$ $Header $__Header$
  * Author          : Thomas Biskup
  * Created On      : Sun Dec 29 21:57:08 1996
@@ -43,7 +43,7 @@
 
 #if defined(__GO32__)
 # define __TS_DOS__
-#elif defined(linux)
+#elif defined(__linux__)
 # define __TS_LINUX__
 #else
 # error Please define your target system in 'config.h'.
