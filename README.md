@@ -1,2 +1,2 @@
 # qhack
-A repository for mirroring Thomas Biskups QHack
+A repository for my game project based on Thomas Biskups QHack
